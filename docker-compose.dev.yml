@@ -6,7 +6,7 @@ services:
     image: mysql:latest
     restart: 'unless-stopped'
     ports:
-      - 3306:3306
+      - 3006:3306
     volumes:
       - database_data:/var/lib/mysql
     environment:
@@ -23,7 +23,8 @@ services:
     depends_on:
       - db_support_dev
     environment:
-      - PMA_HOST=db_support_dev
+      - PMA_HOST=202.51.232.124
+      - PMA_PORT=3006
       - PMA_USER=root
       - PMA_PASSWORD=j4l4w4v3!@#
     networks:
