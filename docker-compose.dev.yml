@@ -5,6 +5,8 @@ services:
     container_name: db_support_dev
     image: mysql:latest
     restart: 'unless-stopped'
+    ports:
+      - 3306:3306
     volumes:
       - database_data:/var/lib/mysql
     environment:
