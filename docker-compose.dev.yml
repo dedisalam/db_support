@@ -11,6 +11,8 @@ services:
       MYSQL_ROOT_PASSWORD: 'root'
     networks:
       - development
+    volumes:
+      - db_support_dev:/var/lib/mysql
 
   db_support_admin_dev:
     container_name: db_support_admin_dev
@@ -28,3 +30,7 @@ services:
 networks:
   development:
     name: development
+
+volumes:
+  db_support_dev:
+    name: db_support_dev
