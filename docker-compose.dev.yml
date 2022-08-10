@@ -12,6 +12,8 @@ services:
       - database_data2:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: 12345
+      MYSQL_USER: jalawave
+      MYSQL_PASSWORD: 12345
     networks:
       - development
 
@@ -25,7 +27,7 @@ services:
       - db_support_dev
     environment:
       PMA_HOST: db_support_dev
-      PMA_USER: root
+      PMA_USER: jalawave
       PMA_PASSWORD: 12345
     networks:
       - development
