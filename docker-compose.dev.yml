@@ -21,9 +21,7 @@ services:
     depends_on:
       - db_support_dev
     environment:
-      PMA_HOST: db_support_dev
-      PMA_USER: root
-      PMA_PASSWORD: j4l4w4v3!@#
+      PMA_ARBITRARY: 1
     networks:
       - development
 
