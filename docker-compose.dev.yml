@@ -25,7 +25,8 @@ services:
       - db_support_dev
     environment:
       PMA_HOST: db_support_dev
-      MYSQL_ROOT_PASSWORD: 12345
+      PMA_USER: root
+      PMA_PASSWORD: 12345
     networks:
       - development
 
