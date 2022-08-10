@@ -9,7 +9,7 @@ services:
     volumes:
       - database_data:/var/lib/mysql
     environment:
-      MYSQL_ROOT_PASSWORD: j4l4w4v3!@
+      MYSQL_ROOT_PASSWORD: root
     networks:
       - production
 
