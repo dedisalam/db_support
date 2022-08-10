@@ -9,7 +9,7 @@ services:
     ports:
       - 3006:3306
     volumes:
-      - database_data:/var/lib/mysql
+      - database_data2:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: j4l4w4v3!@#
     networks:
@@ -24,7 +24,7 @@ services:
     depends_on:
       - db_support_dev
     environment:
-      - PMA_HOST=202.51.232.124
+      - PMA_HOST=db_support_dev
       - PMA_PORT=3006
       - PMA_USER=root
       - PMA_PASSWORD=j4l4w4v3!@#
@@ -36,5 +36,5 @@ networks:
     name: development
 
 volumes:
-  database_data:
-    name: database_data
+  database_data2:
+    name: database_data2
