@@ -6,8 +6,8 @@ services:
     image: mysql:latest
     restart: 'unless-stopped'
     # command: --default-authentication-plugin=mysql_native_password
-    ports:
-      - 3306:3306
+    # ports:
+    #   - 3306:3306
     volumes:
       - database_data2:/var/lib/mysql
     environment:
@@ -27,7 +27,7 @@ services:
       - PMA_HOST=db_support_dev
       - PMA_USER=root
       - PMA_PASSWORD=j4l4w4v3!@
-      - PMA_PORT=3306
+      # - PMA_PORT=3306
     networks:
       - development
 
