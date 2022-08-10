@@ -3,12 +3,12 @@ version: '3.7'
 services:
   db_support_dev:
     container_name: db_support_dev
-    image: mysql
+    image: bitnami/mysql:latest
     restart: 'always'
     ports:
       - '3306:3306'
     environment:
-      MYSQL_ROOT_PASSWORD: j4l4w4v3!@#
+      ALLOW_EMPTY_PASSWORD: 'yes'
     networks:
       - development
 
