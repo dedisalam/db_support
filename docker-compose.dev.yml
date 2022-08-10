@@ -24,9 +24,8 @@ services:
     depends_on:
       - db_support_dev
     environment:
-      - PMA_ARBITRARY=1
-      - PMA_HOST=db_support_dev
-      - MYSQL_ROOT_PASSWORD=12345
+      PMA_HOST: db_support_dev
+      MYSQL_ROOT_PASSWORD: 12345
     networks:
       - development
 
