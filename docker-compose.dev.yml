@@ -7,8 +7,6 @@ services:
     restart: 'always'
     ports:
       - '3306:3306'
-    volumes:
-      - database_data:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: j4l4w4v3!@#
     networks:
@@ -32,7 +30,3 @@ services:
 networks:
   development:
     name: development
-
-volumes:
-  database_data:
-    name: database_data
