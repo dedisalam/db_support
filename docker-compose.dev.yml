@@ -2,34 +2,37 @@ version: '3.7'
 
 services:
   db_support_dev:
-    container_name: db_support_dev
+    container_name: db_support
     image: mysql:latest
     restart: 'unless-stopped'
-    command: --default-authentication-plugin=mysql_native_password
-    # ports:
-    #   - 3306:3306
+    ports:
+      - '3306:3306'
+    volumes:
+      - database_data:/var/lib/mysql
     environment:
-      MYSQL_ROOT_PASSWORD: 12345
-      MYSQL_USER: jalawave
-      MYSQL_PASSWORD: 12345
+      MYSQL_ROOT_PASSWORD: j4l4w4v3!@
     networks:
       - development
 
   db_support_admin_dev:
     container_name: db_support_admin_dev
     image: phpmyadmin:latest
-    restart: 'unless-stopped'
+    restart: 'always'
     ports:
       - 3080:80
     depends_on:
       - db_support_dev
     environment:
       PMA_HOST: db_support_dev
-      PMA_USER: jalawave
-      PMA_PASSWORD: 12345
+      PMA_USER: root
+      PMA_PASSWORD: j4l4w4v3!@
     networks:
       - development
 
 networks:
   development:
     name: development
+
+volumes:
+  database_data:
+    name: database_data
