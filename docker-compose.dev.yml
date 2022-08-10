@@ -3,14 +3,14 @@ version: '3.7'
 services:
   db_support_dev:
     container_name: db_support_dev
-    image: mysql:latest
+    image: mysql
     restart: 'always'
     ports:
       - '3306:3306'
     volumes:
       - database_data:/var/lib/mysql
     environment:
-      MYSQL_ROOT_PASSWORD: j4l4w4v3!@
+      MYSQL_ROOT_PASSWORD: j4l4w4v3!@#
     networks:
       - development
 
@@ -25,7 +25,7 @@ services:
     environment:
       PMA_HOST: db_support_dev
       PMA_USER: root
-      PMA_PASSWORD: j4l4w4v3!@
+      PMA_PASSWORD: j4l4w4v3!@#
     networks:
       - development
 
