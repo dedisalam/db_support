@@ -5,13 +5,13 @@ services:
     container_name: db_support_dev
     image: mysql:latest
     restart: 'unless-stopped'
-    # command: --default-authentication-plugin=mysql_native_password
+    command: --default-authentication-plugin=mysql_native_password
     # ports:
     #   - 3306:3306
     volumes:
       - database_data2:/var/lib/mysql
     environment:
-      MYSQL_ROOT_PASSWORD: j4l4w4v3!@
+      MYSQL_ROOT_PASSWORD: 12345
     networks:
       - development
 
@@ -26,7 +26,7 @@ services:
     environment:
       - PMA_HOST=db_support_dev
       - PMA_USER=root
-      - PMA_PASSWORD=j4l4w4v3!@
+      - PMA_PASSWORD=12345
       # - PMA_PORT=3306
     networks:
       - development
