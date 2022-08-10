@@ -5,6 +5,7 @@ services:
     container_name: db_support
     image: mysql:latest
     restart: 'unless-stopped'
+    command: --default-authentication-plugin=mysql_native_password
     volumes:
       - database_data:/var/lib/mysql
     environment:
