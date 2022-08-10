@@ -2,9 +2,9 @@ version: '3.7'
 
 services:
   db_support_dev:
-    container_name: db_support
+    container_name: db_support_dev
     image: mysql:latest
-    restart: 'unless-stopped'
+    restart: 'always'
     ports:
       - '3306:3306'
     volumes:
