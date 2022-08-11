@@ -10,7 +10,7 @@ services:
     ports:
       - '3306:3306'
     environment:
-      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: j4l4w4v3!@#
     networks:
       - production
       - development
@@ -26,7 +26,7 @@ services:
     environment:
       PMA_HOST: db_support
       PMA_USER: root
-      PMA_PASSWORD: root
+      PMA_PASSWORD: j4l4w4v3!@#
     networks:
       - development
 
