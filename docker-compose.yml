@@ -1,35 +1,38 @@
 version: '3.7'
 
 services:
-  db_support_dev:
-    container_name: db_support_dev
+  db_support:
+    container_name: db_support
     image: mysql:latest
-    restart: 'always'
+    restart: 'unless-stopped'
+    volumes:
+      - database_data:/var/lib/mysql
     ports:
       - '3306:3306'
     environment:
-      MYSQL_ROOT_PASSWORD: 'root'
+      MYSQL_ROOT_PASSWORD: root
     networks:
+      - production
       - development
-    volumes:
-      - database_data:/var/lib/mysql
-
-  db_support_admin_dev:
-    container_name: db_support_admin_dev
+  
+  db_support_admin:
+    container_name: db_support_admin
     image: phpmyadmin:latest
     restart: 'always'
     ports:
       - 3080:80
     depends_on:
-      - db_support_dev
+      - db_support
     environment:
-      PMA_HOST: db_support_dev
+      PMA_HOST: db_support
       PMA_USER: root
       PMA_PASSWORD: root
     networks:
       - development
 
 networks:
+  production:
+    name: production
   development:
     name: development
 
